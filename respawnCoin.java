@@ -3,12 +3,12 @@ import greenfoot.*;
         Coin coin = new Coin();
         int x = Greenfoot.getRandomNumber(getWidth());  
         int y = Greenfoot.getRandomNumber(getHeight()); 
-        summon object
+        //summon object
     }
     public class respawnCoin {
         //spawn coin
     }
-    if(coin.isTouching bee) {
+        if(coin.isTouching bee) {
         //hide coin
     }
 }
