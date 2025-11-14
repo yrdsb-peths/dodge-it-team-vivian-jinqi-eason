@@ -12,6 +12,7 @@ public class Bee extends Actor
      * Act - do whatever the Bee wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    private int ammo = 0;
     public void act()
     {
         if(Greenfoot.isKeyDown("left"))
@@ -24,16 +25,24 @@ public class Bee extends Actor
         }
         if(Greenfoot.isKeyDown("f"))
         {
+            shoot();
+            ammo--;
+            ((MyWorld)
+            getWorld()).showAmmo(ammo);
+        }
+        if(isTouching(Ammo.class) && ammo < 3)
+        {
+            ammo++;
+            ((MyWorld)
+            getWorld()).showAmmo(ammo);
+            getWorld().removeObject(getOneIntersectingObject(Ammo.class));
             
         }
     }
-    public void catchAmmo()
-    {
-        ((MyWorld)getWorld()).addAmmo(1);
-    }
     private void shoot()
     {
-        
-        
+        Bullet b = new Bullet();
+        getWorld().addObject(b, getX(), getY() - 30);
+            
     }
 }

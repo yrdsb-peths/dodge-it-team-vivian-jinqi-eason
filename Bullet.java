@@ -14,6 +14,15 @@ public class Bullet extends Actor
      */
     public void act()
     {
-        setLocation(getX(), getY() + 8);// Add your action code here.
+        setLocation(getX(), getY() - 8);//
+        if(getY() < 0)
+        {
+            getWorld().removeObject(this);    
+        }
+        if(isTouching(Enemy.class))
+        {
+            getWorld().removeObject(getOneIntersectingObject(Enemy.class));
+            getWorld().removeObject(this);    
+        }
     }
 }

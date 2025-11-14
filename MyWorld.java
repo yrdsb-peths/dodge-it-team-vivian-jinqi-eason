@@ -8,8 +8,8 @@ public class MyWorld extends World {
 
         Bee bee = new Bee();
         addObject(bee, 300, 350);
-        Coin coin = new Coin();
-        addObject(coin, Greenfoot.getRandomNumber(600), 350);
+        Ammo ammo = new Ammo();
+        addObject(ammo, Greenfoot.getRandomNumber(600), 350);
         Bullet b = new Bullet();
         Enemy a = new Enemy();
         addObject(a,300,50);
@@ -19,15 +19,11 @@ public class MyWorld extends World {
     {
         if(Greenfoot.getRandomNumber(150) < 1)
             {
-             addObject(new Coin(), Greenfoot.getRandomNumber(600), 350);    
+             addObject(new Ammo(), Greenfoot.getRandomNumber(600), 350);    
             }
-        
     }
-    public void addAmmo(int number)
+    public void showAmmo(int ammo)
     {
-        if(ammo <= 3)
-        {
-            ammo += number;    
-        }
+        showText("Ammo: " + ammo, 520, 50);
     }
 }
