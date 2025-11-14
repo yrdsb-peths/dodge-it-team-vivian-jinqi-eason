@@ -11,13 +11,17 @@ public class MyWorld extends World {
         Coin coin = new Coin();
         addObject(coin, Greenfoot.getRandomNumber(600), 350);
         Bullet b = new Bullet();
+        Enemy a = new Enemy();
+        addObject(a,300,50);
+        
     }
     public void act()
     {
-        if(Greenfoot.getRandomNumber(100) < 1)
+        if(Greenfoot.getRandomNumber(150) < 1)
             {
              addObject(new Coin(), Greenfoot.getRandomNumber(600), 350);    
             }
+        
     }
     public void addAmmo(int number)
     {
