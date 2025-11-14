@@ -31,4 +31,9 @@ public class Bee extends Actor
     {
         ((MyWorld)getWorld()).addAmmo(1);
     }
+    private void shoot()
+    {
+        
+        
+    }
 }

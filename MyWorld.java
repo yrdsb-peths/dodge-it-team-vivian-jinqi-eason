@@ -10,6 +10,7 @@ public class MyWorld extends World {
         addObject(bee, 300, 350);
         Coin coin = new Coin();
         addObject(coin, Greenfoot.getRandomNumber(600), 350);
+        Bullet b = new Bullet();
     }
     public void act()
     {
