@@ -25,10 +25,13 @@ public class Bee extends Actor
         }
         if(Greenfoot.isKeyDown("f"))
         {
+            if(ammo > 0)
+            {
             shoot();
             ammo--;
             ((MyWorld)
-            getWorld()).showAmmo(ammo);
+            getWorld()).showAmmo(ammo);    
+            }
         }
         if(isTouching(Ammo.class) && ammo < 3)
         {

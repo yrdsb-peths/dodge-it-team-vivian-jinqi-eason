@@ -14,6 +14,14 @@ public class Enemy extends Actor
      */
     public void act()
     {
-        // Add your action code here.
+        if(isTouching(Enemy.class))
+        {
+        World w = getWorld();
+        Enemy e = (Enemy) getOneIntersectingObject(Enemy.class); 
+        w.removeObject(e);
+        w.removeObject(this);
+        
+        w.addObject(new Enemy(), Greenfoot.getRandomNumber(getWorld().getWidth()), 0);
+        }
     }
 }

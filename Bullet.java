@@ -22,7 +22,8 @@ public class Bullet extends Actor
         if(isTouching(Enemy.class))
         {
             getWorld().removeObject(getOneIntersectingObject(Enemy.class));
-            getWorld().removeObject(this);    
+            getWorld().removeObject(this);
+            getWorld().addObject(new Enemy(), Greenfoot.getRandomNumber(getWorld().getWidth()), 0);
         }
     }
 }
