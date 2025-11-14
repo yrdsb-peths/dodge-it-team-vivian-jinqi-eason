@@ -14,6 +14,21 @@ public class Bee extends Actor
      */
     public void act()
     {
-        // Add your action code here.
+        if(Greenfoot.isKeyDown("left"))
+        {
+            move(-5);    
+        }
+        if(Greenfoot.isKeyDown("right"))
+        {
+            move(5);    
+        }
+        if(Greenfoot.isKeyDown("f"))
+        {
+            
+        }
+    }
+    public void catchAmmo()
+    {
+        ((MyWorld)getWorld()).addAmmo(1);
     }
 }
