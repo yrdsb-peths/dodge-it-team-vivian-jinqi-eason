@@ -1,19 +1,42 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  
 
-/**
- * Write a description of class boss here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
-public class boss extends Actor
+public class Boss extends Actor
 {
-    /**
-     * Act - do whatever the boss wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    private int health = 50;
+    private int speed = 2;
+
     public void act()
     {
-        // Add your action code here.
+        movePattern();
+        checkHit();
+        checkDeath();
+    }
+
+    public void movePattern()
+    {
+        setLocation(getX() + speed, getY());
+
+        if (getX() <= 20 || getX() >= getWorld().getWidth() - 20)
+        {
+            speed = -speed;
+        }
+    }
+
+    public void checkHit()
+    {
+        Coin b = (Coin)getOneIntersectingObject(Coin.class);
+        if (b != null)
+        {
+            health -= 5;
+            getWorld().removeObject(b);
+        }
+    }
+
+    public void checkDeath()
+    {
+        if (health <= 0)
+        {
+            getWorld().removeObject(this);
+        }
     }
 }
